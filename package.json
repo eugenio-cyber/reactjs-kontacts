@@ -1,5 +1,6 @@
 {
-  "name": "contacts",
+  "homepage": "https://eugenio-cyber.github.io/reactjs-mui-kontacts/",
+  "name": "kontacts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
