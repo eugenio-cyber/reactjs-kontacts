@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/reactjs-mui-kontacts/static/css/main.ac2f0116.css",
+    "main.js": "/reactjs-mui-kontacts/static/js/main.eb4cd0f3.js",
+    "static/media/login.png": "/reactjs-mui-kontacts/static/media/login.935b45182806062af117.png",
+    "static/media/sign-up.png": "/reactjs-mui-kontacts/static/media/sign-up.28b04c7e95d261adf5d6.png",
+    "static/media/cash.svg": "/reactjs-mui-kontacts/static/media/cash.ae78f1cd3490e142e6a69d7f88cff2f2.svg",
+    "static/media/pencil.svg": "/reactjs-mui-kontacts/static/media/pencil.19e86b4f41af0bf9ce02473fbfe1684d.svg",
+    "index.html": "/reactjs-mui-kontacts/index.html",
+    "static/media/log-out.svg": "/reactjs-mui-kontacts/static/media/log-out.f870f516edf06f8f2920f98c7a129668.svg",
+    "static/media/close.svg": "/reactjs-mui-kontacts/static/media/close.e8be7c8c8d3ec24dba74d0f46d4a47ad.svg",
+    "main.ac2f0116.css.map": "/reactjs-mui-kontacts/static/css/main.ac2f0116.css.map",
+    "main.eb4cd0f3.js.map": "/reactjs-mui-kontacts/static/js/main.eb4cd0f3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac2f0116.css",
+    "static/js/main.eb4cd0f3.js"
+  ]
+}
