@@ -1,7 +1,13 @@
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes, Outlet, Navigate } from 'react-router-dom';
+import Home from './pages/Home/index';
 import Login from './pages/Login/index';
 import SignUp from './pages/SignUp/index';
-import Home from './pages/Home/index';
+import { getItem } from './utils/storage';
+
+const ProtectRoutes = ({ redirectTo }) => {
+  const isAuthenticated = getItem('token');
+  return isAuthenticated ? <Outlet /> : <Navigate to={redirectTo} />;
+};
 
 const ProjectRoutes = () => {
   return (
@@ -12,7 +18,12 @@ const ProjectRoutes = () => {
       </Route>
 
       <Route path="/sign-up" element={<SignUp />} />
-      <Route path="/home" element={<Home />} />
+
+      <Route element={<ProtectRoutes redirectTo="/" />}>
+        <Route path="/home" element={<Home />} />
+      </Route>
+
+      <Route path="*" element={<h1>404 - Not Found</h1>} />
     </Routes>
   );
 };

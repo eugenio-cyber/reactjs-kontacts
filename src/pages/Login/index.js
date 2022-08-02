@@ -1,19 +1,18 @@
 import {
-  Container,
-  CardMedia,
   Box,
   Card,
-  Typography,
+  CardMedia,
+  Container,
   TextField,
+  Typography,
 } from '@mui/material';
-import ImgLogin from '../../assets/login.png';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import ImgLogin from '../../assets/login.png';
 import SuccessBtn from '../../components/SuccessBtn';
-import { box } from './styles.js';
-import { useState } from 'react';
 import api from '../../services/api';
-import { useEffect } from 'react';
 import { getItem, setItem } from '../../utils/storage';
+import { box } from './styles.js';
 
 const Login = () => {
   const navigate = useNavigate();

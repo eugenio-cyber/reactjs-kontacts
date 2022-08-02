@@ -6,14 +6,13 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import ImgSignUp from '../../assets/sign-up.png';
 import DangerBtn from '../../components/DangerBtn';
 import SuccessBtn from '../../components/SuccessBtn';
-import { box } from './styles.js';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import api from '../../services/api';
+import { box } from './styles.js';
 
 const SignUp = () => {
   const navigate = useNavigate();

@@ -19,10 +19,10 @@ import IconDelete from '../../assets/cash.svg';
 import IconLogOut from '../../assets/log-out.svg';
 import IconEdit from '../../assets/pencil.svg';
 import BasicModal from '../../components/Modal';
-import { removeItem, getItem } from '../../utils/storage';
+import api from '../../services/api';
+import { getItem, removeItem } from '../../utils/storage';
 import './styles.css';
 import { box } from './styles.js';
-import api from '../../services/api';
 
 const Home = () => {
   const navigate = useNavigate();

@@ -1,9 +1,9 @@
-import { Box, Typography, Modal, TextField } from '@mui/material';
+import { Box, Modal, TextField, Typography } from '@mui/material';
+import { useState } from 'react';
 import IconClose from '../../assets/close.svg';
-import { boxContainer, boxContent, title, subtitle } from './style';
 import DangerBtn from '../DangerBtn/index';
 import SuccessBtn from '../SuccessBtn/index';
-import { useState } from 'react';
+import { boxContainer, boxContent, subtitle, title } from './style';
 import './styles.css';
 
 const BasicModal = ({
