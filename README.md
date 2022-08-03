@@ -10,7 +10,7 @@
 
 ## 🔗 Quer acessar o projeto?
 
-[Clique aqui para ver](https://eugenio-cyber.github.io/reactjs-mui-kontacts/)
+[Clique aqui para ver](http://reactjs-mui-kontacts.vercel.app/)
 
 ## 🏹 Qual o objetivo do projeto?
 
