@@ -56,6 +56,7 @@ const BasicModal = ({
       localCurrentContact.nome = value;
       setCurrentContact({ ...localCurrentContact });
     }
+
     if (modal.tipe === 'register') {
       const localNewContact = { ...newContact };
       localNewContact.nome = value;
@@ -84,7 +85,7 @@ const BasicModal = ({
     localWarning.name = false;
 
     if (modal.tipe === 'delete') {
-      deleteContact();
+      return deleteContact();
     }
 
     if (modal.tipe === 'register') {
@@ -106,11 +107,12 @@ const BasicModal = ({
         localWarning.name = true;
       }
 
-      setWarning({ ...localWarning });
-
       if (!localWarning.email && !localWarning.name && !localWarning.phone) {
-        sendNewContact();
+        handleCloseModal();
+        return sendNewContact();
       }
+
+      setWarning({ ...localWarning });
     }
 
     if (modal.tipe === 'edit') {
@@ -135,18 +137,32 @@ const BasicModal = ({
         localWarning.name = true;
       }
 
-      setWarning({ ...localWarning });
-
       if (!localWarning.email && !localWarning.name && !localWarning.phone) {
-        updateContact();
+        return updateContact();
       }
-    }
 
-    handleCloseModal();
+      setWarning({ ...localWarning });
+    }
   };
 
   const cleanCurrentContact = () => {
-    setCurrentContact({});
+    if (modal.tipe === 'edit') {
+      return setCurrentContact({});
+    }
+    if (modal.tipe === 'register') {
+      const localNewContact = {
+        nome: '',
+        email: '',
+        telefone: '',
+      };
+      const localWarning = { ...warning };
+      localWarning.email = false;
+      localWarning.phone = false;
+      localWarning.name = false;
+      setNewContact({ ...localNewContact });
+      setWarning({ ...localWarning });
+      return;
+    }
   };
 
   return (
@@ -251,6 +267,7 @@ const BasicModal = ({
                   fullWidth
                   error={warning.name}
                   onChange={(event) => handleChangeName(event.target.value)}
+                  value={newContact.nome}
                   id="outlined-basic"
                   label="Nome"
                   variant="outlined"
@@ -260,6 +277,7 @@ const BasicModal = ({
                   fullWidth
                   error={warning.email}
                   onChange={(event) => handleChangeEmail(event.target.value)}
+                  value={newContact.email}
                   id="outlined-basic"
                   label="E-mail"
                   variant="outlined"
@@ -267,13 +285,14 @@ const BasicModal = ({
                 />
                 <TextField
                   fullWidth
-                  helperText={warning.phone && 'ex: 99999999999'}
-                  error={warning.phone}
-                  onChange={(event) => handleChangePhone(event.target.value)}
-                  id="outlined-basic"
                   label="Telefone"
                   variant="outlined"
+                  id="outlined-basic"
                   sx={{ mb: '72px' }}
+                  error={warning.phone}
+                  value={newContact.telefone}
+                  helperText={warning.phone && 'ex: 99999999999'}
+                  onChange={(event) => handleChangePhone(event.target.value)}
                 />
                 <Box
                   component="div"
@@ -292,7 +311,7 @@ const BasicModal = ({
                   <DangerBtn
                     width="100%"
                     text="LIMPAR"
-                    onClick={cleanCurrentContact}
+                    onClick={() => cleanCurrentContact()}
                   />
                 </Box>
               </>
