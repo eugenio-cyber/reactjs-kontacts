@@ -153,7 +153,7 @@ const Home = () => {
     }
 
     getContacts();
-  }, []);
+  }, [navigate]);
 
   return (
     <Container

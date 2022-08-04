@@ -97,7 +97,7 @@ const Login = () => {
     if (token) {
       navigate('/home');
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <Container disableGutters maxWidth="xl" sx={{ p: 0, display: 'flex' }}>
