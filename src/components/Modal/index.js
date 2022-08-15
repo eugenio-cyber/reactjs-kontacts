@@ -85,6 +85,7 @@ const BasicModal = ({
     localWarning.name = false;
 
     if (modal.tipe === 'delete') {
+      handleCloseModal();
       return deleteContact();
     }
 
@@ -138,6 +139,7 @@ const BasicModal = ({
       }
 
       if (!localWarning.email && !localWarning.name && !localWarning.phone) {
+        handleCloseModal();
         return updateContact();
       }
 
@@ -146,8 +148,11 @@ const BasicModal = ({
   };
 
   const cleanCurrentContact = () => {
+    if (modal.tipe === 'delete') {
+      return handleCloseModal();
+    }
     if (modal.tipe === 'edit') {
-      return setCurrentContact({});
+      return handleCloseModal();
     }
     if (modal.tipe === 'register') {
       const localNewContact = {
